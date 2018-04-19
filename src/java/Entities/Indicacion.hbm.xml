@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-oct-2017 18:50:52 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Entities.Indicacion" table="Indicacion" schema="dbo" catalog="SAVYRM" optimistic-lock="version">
+        <id name="idIndicacion" type="int">
+            <column name="idIndicacion" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="preparacion" class="Entities.Preparacion" fetch="select">
+            <column name="fk_idPreparacion" not-null="true" />
+        </many-to-one>
+        <property name="orden" type="int">
+            <column name="orden" not-null="true" />
+        </property>
+        <property name="detalle" type="string">
+            <column name="detalle" length="250" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

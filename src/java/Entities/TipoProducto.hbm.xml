@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-oct-2017 18:50:52 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Entities.TipoProducto" table="TipoProducto" schema="dbo" catalog="SAVYRM" optimistic-lock="version">
+        <id name="idTipoProducto" type="int">
+            <column name="idTipoProducto" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombreTipoProducto" type="string">
+            <column name="nombreTipoProducto" length="75" not-null="true" />
+        </property>
+        <set name="productos" table="Producto" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="fk_idTIpoProducto" not-null="true" />
+            </key>
+            <one-to-many class="Entities.Producto" />
+        </set>
+    </class>
+</hibernate-mapping>

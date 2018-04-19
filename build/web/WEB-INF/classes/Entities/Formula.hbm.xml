@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-oct-2017 18:50:52 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Entities.Formula" table="Formula" schema="dbo" catalog="SAVYRM" optimistic-lock="version">
+        <id name="idFormula" type="int">
+            <column name="idFormula" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombreFormula" type="string">
+            <column name="nombreFormula" length="250" />
+        </property>
+        <property name="detalle" type="string">
+            <column name="detalle" length="250" />
+        </property>
+        <set name="productoFormulas" table="ProductoFormula" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="fk_idFormula" not-null="true" />
+            </key>
+            <one-to-many class="Entities.ProductoFormula" />
+        </set>
+    </class>
+</hibernate-mapping>
