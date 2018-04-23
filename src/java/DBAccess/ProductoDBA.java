@@ -461,21 +461,21 @@ public class ProductoDBA {
 
     public ArrayList<Producto_Preparacion_PreparacionProducto> getListaPreparacionPorProductoID(Integer idProducto) {
         ArrayList <Producto_Preparacion_PreparacionProducto> listaProducto_Preparacion_PreparacionProducto;
-        
-        session = HibernateUtil.getSessionFactory().openSession();
+        System.out.println("ProductoDBA, ID: " + idProducto);
+        Session currentSession = HibernateUtil.getSessionFactory().openSession();
         Query query;
-        query = session.createSQLQuery("select * from Producto pro\n" +
+        query = currentSession.createSQLQuery("select * from Producto pro\n" +
             "inner join Preparacion pre on pre.fk_idProducto = pro.idProducto\n" +
             "inner join Indicacion ind on ind.fk_idPreparacionIndicacion = pre.idPreparacion\n" +
             "where pro.idProducto = :idProducto").setResultTransformer(Transformers.aliasToBean(Producto_Preparacion_PreparacionProducto.class));
         query.setParameter("idProducto", idProducto);
         
-        session.beginTransaction();
+        currentSession.beginTransaction();
         
         listaProducto_Preparacion_PreparacionProducto = (ArrayList<Producto_Preparacion_PreparacionProducto>) query.list();
         System.out.println("Tamaño lista de indicaciones: " + listaProducto_Preparacion_PreparacionProducto.size());
-        session.getTransaction().commit();
-        session.close();
+        currentSession.getTransaction().commit();
+        currentSession.close();
         
         return listaProducto_Preparacion_PreparacionProducto;
     }

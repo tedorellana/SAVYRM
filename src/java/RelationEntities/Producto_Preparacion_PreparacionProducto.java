@@ -31,7 +31,7 @@ public class Producto_Preparacion_PreparacionProducto {
     
     //indicacion
     private Integer idIndicacion;
-    private int ordenIndicacion;
+    private Integer ordenIndicacion;
     private String detalleIndicacion;
     private Integer fk_idPreparacionIndicacion;
 
