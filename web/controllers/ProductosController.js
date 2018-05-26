@@ -93,7 +93,7 @@ angular.module('angularRoutingApp').controller('productosController', function (
                 idProducto : $scope.productoSeleccionadoElaboracionEPM.idProducto
             }
         }).then(function successCallback(response){
-            $scope.productoSeleccionadoFormulaEPM = response.data;
+            $scope.productosSeleccionadosFormulaEPM = response.data;
         }, function errorCallback(){
            alert("Sucedio un error no esperado. Por favor, intenta más tarde.");
         });
@@ -107,7 +107,7 @@ angular.module('angularRoutingApp').controller('productosController', function (
                 idProducto : $scope.productoSeleccionadoElaboracionEPM.idProducto
             }
         }).then(function successCallback(response){
-            $scope.productoSeleccionadoPreparacionEPM = response.data;
+            $scope.productosSeleccionadosPreparacionEPM = response.data;
         }, function errorCallback(){
            alert("Sucedio un error no esperado. Por favor, intenta más tarde.");
         });

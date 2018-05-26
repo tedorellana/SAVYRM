@@ -106,7 +106,7 @@ public class ProductosResource {
     @Path("getProductoFormula")
     @Consumes("application/json")
     public String getProductoFormula(String data){
-        System.out.println("getProductoFormula Resource inicia");
+        System.out.println("getProductoFormula Resource inicia " );
         String respuesta = "Esta opción no esta disponible temporalmente.\nPor favor Intenta más tarde.";        
         try{
             ProductoController productoController = new ProductoController();

@@ -163,38 +163,58 @@
                       <label>Formula:</label>
                       <table class="table table-condensed">
                           <tr>
-                            <th>Producto</th>
-                            <th>Porcentaje</th>
-                            <th></th>
+                                <th>Producto</th>
+                                <th>Porcentaje</th>
+                                <th>Acciones</th>
                           </tr>
-                          <tr>
-                              <td>Productos aquí</td>
-                              <td>Porcentajes aquí</td>
-                              <td><button class="btn btn-danger">X</button></td>
+                          <tr ng-repeat="productoSeleccionadoFormulaEPM in productosSeleccionadosFormulaEPM">
+                                <td>{{productoSeleccionadoFormulaEPM.nombreProducto}} %</td>
+                                <td>{{productoSeleccionadoFormulaEPM.porcentaje}} %</td>
+                                <td>
+                                    <button class="btn-warning">Editar</button>
+                                    <button class="btn-danger">Elimninar</button>
+                                </td>
                           </tr>
                       </table>
+                    </div>
+                    <div class="form-group col-md-5"> 
+                        <label>Porcentaje:</label>
+                        <!--Inicio Contenedor de Formula-->
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success" style="width: 35%">
+                              <span class="sr-only">{{productoSeleccionadoFormulaEPM[1].porcentaje}}% Complete (success)</span>
+                            </div>
+                            <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: 20%">
+                              <span class="sr-only">20% Complete (warning)</span>
+                            </div>
+                            <div class="progress-bar progress-bar-danger" style="width: 10%">
+                              <span class="sr-only">10% Complete (danger)</span>
+                            </div>
+                        </div>
+                        <!--Fin Contenedor de Formula-->
                     </div>
                     <!-- Cuadro de Pasos de Preparación -->
                     <div class="form-group col-md-12">
                       <label>Pasos de la elaboración:</label>
                       <table class="table table-condensed">
                           <tr>
-                            <th>Producto</th>
-                            <th>Porcentaje</th>
-                            <th></th>
+                                <th class="col-md-1">Pasos</th>
+                                <th class="col-md-9">Instrucciones</th>
+                                <th class="col-md-2">Acciones</th>
                           </tr>
-                          <tr>
-                              <td>Productos aquí</td>
-                              <td>Porcentajes aquí</td>
-                              <td><button class="btn btn-danger">X</button></td>
+                          <tr ng-repeat="productoSeleccionadoPreparacionEPM in productosSeleccionadosPreparacionEPM">
+                                <td class="col-md-1">N°{{productoSeleccionadoPreparacionEPM.ordenIndicacion}}</td>
+                                <td class="col-md-9">{{productoSeleccionadoPreparacionEPM.detalleIndicacion}}</td>
+                                <td class="col-md-2">
+                                    <button class="btn-danger">Editar</button>
+                                    <button class="btn-warning">Eliminar</button>
+                                </td>
                           </tr>
                       </table>
                     </div>
                     <div class="form-group col-md-12">
-                      <label>Detalle:</label>
-                      <input type="text" class="form-control" >
-                      {{productoSeleccionadoFormulaEPM}}
-                      {{productoSeleccionadoPreparacionEPM}}
+                      <label>Detalles Adicionales:</label>
+                      <input type="text" class="form-control">
                     </div>
                 </div>
               <button type="button" class="col-md-6 btn btn-default" data-dismiss="modal">Cerrar</button>
