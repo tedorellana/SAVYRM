@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 16-oct-2017 18:50:52 by Hibernate Tools 4.3.1 -->
+<!-- Generated 01-may-2018 23:13:48 by Hibernate Tools 3.6.0 -->
 <hibernate-mapping>
-    <class name="Entities.Producto" table="Producto" schema="dbo" catalog="SAVYRM" optimistic-lock="version">
+    <class name="Entities.Producto" table="Producto" schema="dbo" catalog="SAVYRM">
         <id name="idProducto" type="int">
             <column name="idProducto" />
             <generator class="assigned" />

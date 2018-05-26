@@ -3,28 +3,27 @@
 <hibernate-configuration>
   <session-factory>
     <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
-    <property name="hibernate.connection.url">jdbc:sqlserver://localhost;databaseName=SAVYRM</property>
+    <property name="hibernate.connection.url">jdbc:sqlserver://</property>
     <property name="hibernate.connection.username">adminSAVYRM</property>
     <property name="hibernate.connection.password">admin1234ADMIN</property>
-    <mapping resource="Entities/TipoUsuario.hbm.xml"/>
-    <mapping resource="Entities/Usuario.hbm.xml"/>
-    <mapping resource="Entities/TipoPersona.hbm.xml"/>
-    <mapping resource="Entities/Indicacion.hbm.xml"/>
-    <mapping resource="Entities/Persona.hbm.xml"/>
+    <mapping resource="Entities/Precio.hbm.xml"/>
+    <mapping resource="Entities/UnidadMedida.hbm.xml"/>
+    <mapping resource="Entities/Seccion.hbm.xml"/>
     <mapping resource="Entities/ServicioProducto.hbm.xml"/>
     <mapping resource="Entities/TipoProducto.hbm.xml"/>
-    <mapping resource="Entities/UnidadMedida.hbm.xml"/>
+    <mapping resource="Entities/Persona.hbm.xml"/>
     <mapping resource="Entities/ProductoFormula.hbm.xml"/>
-    <mapping resource="Entities/Sysdiagrams.hbm.xml"/>
-    <mapping resource="Entities/TipoServicio.hbm.xml"/>
+    <mapping resource="Entities/TipoPersona.hbm.xml"/>
     <mapping resource="Entities/Servicio.hbm.xml"/>
-    <mapping resource="Entities/Seccion.hbm.xml"/>
     <mapping resource="Entities/Almacen.hbm.xml"/>
-    <mapping resource="Entities/Precio.hbm.xml"/>
-    <mapping resource="Entities/ProductoSeccion.hbm.xml"/>
-    <mapping resource="Entities/Producto.hbm.xml"/>
-    <mapping resource="Entities/Lote.hbm.xml"/>
-    <mapping resource="Entities/Formula.hbm.xml"/>
     <mapping resource="Entities/Preparacion.hbm.xml"/>
+    <mapping resource="Entities/TipoUsuario.hbm.xml"/>
+    <mapping resource="Entities/Lote.hbm.xml"/>
+    <mapping resource="Entities/Indicacion.hbm.xml"/>
+    <mapping resource="Entities/ProductoSeccion.hbm.xml"/>
+    <mapping resource="Entities/Usuario.hbm.xml"/>
+    <mapping resource="Entities/TipoServicio.hbm.xml"/>
+    <mapping resource="Entities/Producto.hbm.xml"/>
+    <mapping resource="Entities/Formula.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
