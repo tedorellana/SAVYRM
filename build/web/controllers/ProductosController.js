@@ -2,6 +2,8 @@ angular.module('angularRoutingApp').controller('productosController', function (
     //Removing slider
     var idCurrentUser = $sessionStorage.currentUser;
     var sessionLoggedIn = angular.isDefined(idCurrentUser);
+    $scope.mostrarProductosPC = true;
+    $scope.mostrarPreparacionPC = false;
       
     $scope.onLoadProductosController = function(){
         if(!sessionLoggedIn){
@@ -75,6 +77,9 @@ angular.module('angularRoutingApp').controller('productosController', function (
     };
 
     $scope.administrarPreparacionNP = function(event){
+        $scope.mostrarProductosPC = false;
+        $scope.mostrarPreparacionPC = true;
+        
         var productos = $scope.productosNP;
         angular.forEach(productos, function(producto){
             if(producto.idProducto == event.target.value ){
@@ -94,6 +99,7 @@ angular.module('angularRoutingApp').controller('productosController', function (
             }
         }).then(function successCallback(response){
             $scope.productosSeleccionadosFormulaEPM = response.data;
+            $scope.calcularPorcentajeContenedorFormula();
         }, function errorCallback(){
            alert("Sucedio un error no esperado. Por favor, intenta más tarde.");
         });
@@ -111,6 +117,16 @@ angular.module('angularRoutingApp').controller('productosController', function (
         }, function errorCallback(){
            alert("Sucedio un error no esperado. Por favor, intenta más tarde.");
         });
+    };
+    
+    $scope.calcularPorcentajeContenedorFormula = function(){
+        var porcentajeContenedor = 0;
+        $scope.porcentajeContenedor = porcentajeContenedor;
+      
+        angular.forEach($scope.productosSeleccionadosFormulaEPM, function(productosSeleccionadoFormulaEPM){
+            porcentajeContenedor += productosSeleccionadoFormulaEPM.porcentaje;
+        });
+        $scope.porcentajeContenedor = porcentajeContenedor;
     };
     
 }); 

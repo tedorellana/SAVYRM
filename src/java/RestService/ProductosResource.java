@@ -113,6 +113,7 @@ public class ProductosResource {
             Gson gson = new Gson();
             Producto productoSeleccionado = gson.fromJson(data, Producto.class);
             ArrayList<Producto_Formula_ProductoFormula> productoFormulaList = productoController.getListaFormulaPorProductoID(productoSeleccionado.getIdProducto());
+            System.out.println("Tamañao de lista de formula: " +  productoFormulaList.size());
             respuesta = gson.toJson(productoFormulaList);
         }
         catch(Exception ex){
@@ -134,6 +135,7 @@ public class ProductosResource {
             Gson gson = new Gson();
             Producto productoSeleccionado = gson.fromJson(data, Producto.class);
             ArrayList<Producto_Preparacion_PreparacionProducto> productoPreparacionList = productoController.getListaPreparacionPorProductoID(productoSeleccionado.getIdProducto());
+            System.out.println("Tamañao de lista de Preparación: " +  productoPreparacionList.size());
             respuesta = gson.toJson(productoPreparacionList);
         }
         catch(Exception ex){
