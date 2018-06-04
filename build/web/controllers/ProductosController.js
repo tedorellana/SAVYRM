@@ -129,4 +129,8 @@ angular.module('angularRoutingApp').controller('productosController', function (
         $scope.porcentajeContenedor = porcentajeContenedor;
     };
     
+    $scope.ocultarPreparacionProductosPC = function(){
+        $scope.mostrarProductosPC = true;
+        $scope.mostrarPreparacionPC = false;
+    };
 }); 

@@ -44,10 +44,17 @@
     </div>
 
     <!-- INICIO Elaboración Producto -->
+    
     <div ng-show="!mostrarProductosPC">
+        <button type="button" class="col-md-1 btn btn-warning" ng-click="ocultarPreparacionProductosPC()">
+        <span class="glyphicon glyphicon-arrow-left" aria-hidden="true">  Atrás</span>
+        </button>
+        <br><br>
         <div class="panel panel-primary">
             <!-- Default panel contents -->
-            <div class="panel-heading"><h4>Elaboración {{productoSeleccionadoElaboracionEPM.nombreProducto}}</h4></div>
+            <div class="panel-heading">
+                <h4>Elaboración {{productoSeleccionadoElaboracionEPM.nombreProducto}}</h4>
+            </div>
             <div class="panel-body">
                 <div class="row margin-bottom-40">
                     <form class="form-group">
@@ -59,7 +66,7 @@
                                         <h3 style="font-weight: bold;">Fórmula:</h3>
                                     </div>
                                     <div class="col-md-1 col-md-offset-6">
-                                        <button type="button" class="btn btn-success" style="margin-top: 35%; margin-left: -40%;" data-toggle="modal" data-target="#">
+                                        <button type="button" class="btn btn-success" style="margin-top: 35%; margin-left: -40%;" data-toggle="modal" data-target="#ModalAgregarFormula">
                                             <span class="glyphicon glyphicon-plus-sign" aria-hidden="true">Agregar</span>
                                         </button>
                                     </div>
@@ -242,3 +249,13 @@
   </div>
 </div>
 <!-- FINAL PrecioProductoModal -->
+
+<!--Inicio Modal Agregar Formula-->
+<div class="modal fade bs-example-modal-sm" id="ModalAgregarFormula" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      ...hola
+    </div>
+  </div>
+</div>
+<!--Final Modal Agregar Formula-->
