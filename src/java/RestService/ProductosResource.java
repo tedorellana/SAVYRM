@@ -145,4 +145,25 @@ public class ProductosResource {
         System.out.println("getProductoPreparacion Resource finaliza");
         return respuesta;
     }
+    
+    @POST
+    @Path("getListaProducto_TipoProductoNoFinales")
+    @Consumes("application/json")
+    public String getListaProducto_TipoProductoNoFinales(String data){
+        System.out.println("getListaProducto_TipoProductoNoFinales Resource inicia");
+        String respuesta = "Esta opción no esta disponible temporalmente.\nPor favor Intenta más tarde.";        
+        try{
+            ProductoController productoController = new ProductoController();
+            Gson gson = new Gson();
+            ArrayList<Producto_TipoProducto> productosNoFinalesLista = productoController.getListaProducto_TipoProductoNoFinales();
+            System.out.println("Tamañao de lista de productosNoFinalesLista: " +  productosNoFinalesLista.size());
+            respuesta = gson.toJson(productosNoFinalesLista);
+        }
+        catch(Exception ex){
+            ex.printStackTrace();
+            System.out.println("Error no esperado en el metodo \"getListaProducto_TipoProductoNoFinales\": " + ex);
+        }
+        System.out.println("getListaProducto_TipoProductoNoFinales Resource finaliza");
+        return respuesta;
+    }
 }

@@ -66,7 +66,7 @@
                                         <h3 style="font-weight: bold;">Fórmula:</h3>
                                     </div>
                                     <div class="col-md-1 col-md-offset-6">
-                                        <button type="button" class="btn btn-success" style="margin-top: 35%; margin-left: -40%;" data-toggle="modal" data-target="#ModalAgregarFormula">
+                                        <button type="button" ng-click="getProductosNoFinales()" class="btn btn-success" style="margin-top: 35%; margin-left: -40%;" data-toggle="modal" data-target="#ModalAgregarFormula">
                                             <span class="glyphicon glyphicon-plus-sign" aria-hidden="true">Agregar</span>
                                         </button>
                                     </div>
@@ -209,7 +209,7 @@
                     </div>
                 </div>
                 <button type="button" class="col-md-6 btn btn-default" data-dismiss="modal">Cerrar</button>
-                <button type="button" data-dismiss="modal" class="col-md-6 btn btn-primary" ng-click="AgregarNuevaSeccionNSM()">Guardar</button>
+                <button type="button" data-dismiss="modal" class="col-md-6 btn btn-primary" >Guardar</button>
             </form>
         </div>
       </div>
@@ -251,11 +251,63 @@
 <!-- FINAL PrecioProductoModal -->
 
 <!--Inicio Modal Agregar Formula-->
-<div class="modal fade bs-example-modal-sm" id="ModalAgregarFormula" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+<div class="modal fade bs-example-modal-sm" id="ModalAgregarFormula" tabindex="-1"  role="dialog" aria-labelledby="ModalAgregarFormula">
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
-      ...hola
+        <div class="panel panel-info">
+            <div class="panel-heading"><h4><b>Productos</b></h4></div>
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Productos:</label>
+                        <select class="form-control text-center" ng-options="producto_TipoProducto.idProducto as producto_TipoProducto.nombreProducto for producto_TipoProducto in productosNoFinalesParaFormulaNP" ng-model="idProducto" ng-change="SeleccionarProductoParaFormulaPC(idProducto)">
+                          <option value="">Seleccione un Producto</option>
+                        </select>
+                        <br/>
+                        <label>Cantidad de Producto:</label>
+                        <input class="form-control" ng-model="cantidadProductoParaFormulaNP">
+                        <br/>
+                        <label>Unidad de Medida:</label>
+                        <input class="form-control" disabled="true" ng-model="cantidadProductoParaFormulaNP">
+                        <br/>
+                        <button type="button" class="col-md-6 btn btn-default" data-dismiss="modal">Cerrar</button>
+                        <button type="button" data-dismiss="modal" class="col-md-6 btn btn-success">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
   </div>
 </div>
 <!--Final Modal Agregar Formula-->
+
+<!--Inicio Modal Agregar Paso Elaboracion-->
+<div class="modal fade bs-example-modal" id="ModalAgregarPasoElaboracionNP" tabindex="-1"  role="dialog" aria-labelledby="ModalAgregarPasoElaboracionNP">
+  <div class="modal-dialog modal" role="document">
+    <div class="modal-content">
+        <div class="panel panel-info">
+            <div class="panel-heading"><h4><b>Productos</b></h4></div>
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Productos:</label>
+                        <select class="form-control text-center" ng-options="producto_TipoProducto.idProducto as producto_TipoProducto.nombreProducto for producto_TipoProducto in productosNoFinalesParaFormulaNP" ng-model="idProducto" ng-change="SeleccionarProductoParaFormulaPC(idProducto)">
+                          <option value="">Seleccione un Producto</option>
+                        </select>
+                        <br/>
+                        <label>Cantidad de Producto:</label>
+                        <input class="form-control" ng-model="cantidadProductoParaFormulaNP">
+                        <br/>
+                        <label>Unidad de Medida:</label>
+                        <input class="form-control" disabled="true" ng-model="cantidadProductoParaFormulaNP">
+                        <br/>
+                        <button type="button" class="col-md-6 btn btn-default" data-dismiss="modal">Cerrar</button>
+                        <button type="button" data-dismiss="modal" class="col-md-6 btn btn-success">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+<!--Final Modal Agregar Paso Elaboracion-->

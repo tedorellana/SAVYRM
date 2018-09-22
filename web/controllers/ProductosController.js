@@ -133,4 +133,19 @@ angular.module('angularRoutingApp').controller('productosController', function (
         $scope.mostrarProductosPC = true;
         $scope.mostrarPreparacionPC = false;
     };
+    
+    $scope.getProductosNoFinales = function(){
+        $http({
+            method: 'POST',
+            url: 'http://localhost:8084/SAVYRM/webresources/ProductosResource/getListaProducto_TipoProductoNoFinales',
+            data: {
+                
+            }
+        }).then(function successCallback(response){
+            $scope.productosNoFinalesParaFormulaNP = response.data;
+        }, function errorCallback(){
+           alert("Sucedio un error no esperado. Por favor, intenta más tarde.");
+        });
+    };
+    
 }); 
